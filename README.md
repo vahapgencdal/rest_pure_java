@@ -253,16 +253,17 @@ public String create(NewUser user) {
 }
 ```
 
-Our in-memory implementation of repository is as follows: 
+Our in-memory implementation of repository is as follows:
+
 ```java
 
 import java.util.Map;
 import java.util.UUID;
 import java.util.concurrent.ConcurrentHashMap;
 
-import com.consulner.domain.user.NewUser;
-import com.consulner.domain.user.User;
-import com.consulner.domain.user.UserRepository;
+import com.rest.pure.domain.user.NewUser;
+import com.rest.pure.domain.user.User;
+import com.rest.pure.domain.user.UserRepository;
 
 public class InMemoryUserRepository implements UserRepository {
 
