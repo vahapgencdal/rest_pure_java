@@ -261,16 +261,16 @@ import java.util.Map;
 import java.util.UUID;
 import java.util.concurrent.ConcurrentHashMap;
 
-import com.rest.pure.domain.user.NewUser;
+import com.rest.pure.domain.user.UserCreateRequest;
 import com.rest.pure.domain.user.User;
-import com.rest.pure.domain.user.UserRepository;
+import com.rest.pure.domain.dao.UserDao;
 
-public class InMemoryUserRepository implements UserRepository {
+public class InMemoryUserRepository implements UserDao {
 
     private static final Map USERS_STORE = new ConcurrentHashMap();
 
     @Override
-    public String create(NewUser newUser) {
+    public String create(UserCreateRequest newUser) {
         String id = UUID.randomUUID().toString();
         User user = User.builder()
             .id(id)

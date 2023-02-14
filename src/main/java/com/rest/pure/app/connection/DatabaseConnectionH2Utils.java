@@ -72,4 +72,12 @@ public class DatabaseConnectionH2Utils {
         CLOSE_CONNECTION_WITH_STATEMENT(con,ps);
         return resultSet;
     }
+
+    public static ResultSet executeQuery(String query) throws SQLException {
+        Connection con = DatabaseConnectionH2Utils.getConnection();
+        PreparedStatement ps = con.prepareStatement(query);
+        ResultSet resultSet =  ps.executeQuery();
+        CLOSE_CONNECTION_WITH_STATEMENT(con,ps);
+        return resultSet;
+    }
 }
